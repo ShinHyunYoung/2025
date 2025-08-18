@@ -43,8 +43,15 @@ st.markdown("""
 <div class="subtitle">🎵 색을 고르고 지금 감정 태그를 선택하면,<br> 감성에 맞는 인디 밴드/R&B 곡을 추천해 드립니다 💿</div>
 """, unsafe_allow_html=True)
 
-# 밴드/인디 중심 곡 데이터 (생략, 동일)
+# 밴드/인디 중심 곡 데이터 정의
+SEED_SONGS: List[Dict] = [
+    {"title":"영원은 그렇듯","artist":"Redoor","moods":["몽환","쓸쓸","밤"],"color":"#9BB5FF","url":"https://www.youtube.com/watch?v=nX6jTzFQ2P0"},
+    {"title":"사랑의 미학","artist":"Redoor","moods":["서정","쓸쓸","몽환"],"color":"#AEC6FF","url":"https://www.youtube.com/watch?v=umLm9d6V95c"},
+    {"title":"Dreamer","artist":"오월오일 (May05)","moods":["따뜻함","여유","서정"],"color":"#FFD6A5","url":"https://www.youtube.com/watch?v=szjjK9PT6nM"},
+    # 추가 곡도 동일 형식으로 넣어주세요
+]
 
+# session_state 초기화 전에 SEED_SONGS 정의가 반드시 필요
 if "songs" not in st.session_state:
     st.session_state["songs"] = SEED_SONGS.copy()
 
