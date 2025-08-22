@@ -63,3 +63,7 @@ with st.sidebar:
     w_color = st.slider("🎨 색 매칭 비중", 0.0, 1.0, 0.55, 0.05)
     w_mood = 1.0 - w_color
     st.caption(f"→ 현재 ⚪ 색 {int(w_color*100)}% / 💭 감정 {int(w_mood*100)}%")
+    confirm = st.button("🔍 추천곡 확인")
+
+if confirm:
+    st.success("선택이 확인되었습니다! 곧 추천 곡을 불러옵니다 🎧")
